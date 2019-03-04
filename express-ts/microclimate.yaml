@@ -6,11 +6,11 @@ info:
   provider: IBM
   version: 0.0.1
 userInterface:
-    label: Express TypeScript
-    description: Docker-ready Node.js Express app with TypeScript
+    label: Express-TS
+    description: Node.js Express app in TypeScript
 template:
-  giturl: https://github.com/tetchel/express-ts-template.git
+  giturl: https://github.com/tetchel/express-ts
   gitbranch: master
-  localpath: .
+  # localpath: ..
 application:
   port: 3000
