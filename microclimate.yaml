@@ -1,0 +1,16 @@
+extensionId: express-ts
+buildType: docker
+language: TypeScript
+creationType: template
+info:
+  provider: IBM
+  version: 0.0.1
+userInterface:
+    label: Express TypeScript
+    description: Docker-ready Node.js Express app with TypeScript
+template:
+  giturl: https://github.com/tetchel/express-ts-template.git
+  gitbranch: master
+  localpath: .
+application:
+  port: 3000

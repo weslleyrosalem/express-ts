@@ -1,0 +1,15 @@
+{
+	"extends": "tslint:recommended",
+	"rules": {
+		// Disable some recommended rules.
+		"member-ordering": false,
+		"no-namespace": false,
+		"object-literal-shorthand": false,
+		"one-line": false,
+		"ordered-imports": false,
+		"typedef-whitespace": false,
+		"variable-name": [ true, "allow-leading-underscore", "allow-trailing-underscore" ],
+		"only-arrow-functions": false,
+	},
+	"defaultSeverity": "warning"
+}
