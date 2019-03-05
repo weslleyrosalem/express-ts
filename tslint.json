@@ -9,7 +9,7 @@
 		"ordered-imports": false,
 		"typedef-whitespace": false,
 		"variable-name": [ true, "allow-leading-underscore", "allow-trailing-underscore" ],
-		"only-arrow-functions": false,
+		"only-arrow-functions": false
 	},
 	"defaultSeverity": "warning"
 }

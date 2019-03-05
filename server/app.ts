@@ -1,4 +1,4 @@
-require("appmetrics-dash").attach();
+require("appmetrics-dash").attach();      // tslint:disable-line:no-var-requires
 
 import express from "express";
 import logger from "morgan";

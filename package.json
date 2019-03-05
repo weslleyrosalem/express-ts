@@ -12,7 +12,8 @@
     "ts-compile": "tsc",
     "ts-watch": "tsc -w",
     "clean": "rm -rf node_modules/ dist/",
-    "start-docker": "docker build -it express-ts . && docker run -d -p 3000:3000 express-ts"
+    "start-docker": "docker build -it express-ts . && docker run -d -p 3000:3000 express-ts",
+    "lint": "tslint -p ."
   },
   "dependencies": {
     "appmetrics-dash": "^4.1.0",
