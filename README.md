@@ -19,19 +19,21 @@ You must **omit** the trailing slash from `express-ts` so `cp` will perform a re
 1. `git clone https://github.com/tetchel/express-ts.git && cd express-ts`
 2. `cp` the `express-ts` subdirectory (containing only `microclimate.yaml`) to the main Microclimate pod:
 
-`kubectl cp -n <namespace> express-ts/ microclimate-ibm-microclimate-<suffix>:microclimate-workspace/.extensions/`
+`kubectl cp -n <namespace> express-ts/ microclimate-ibm-microclimate-<suffix>:microclimate-workspace/<icp-user>/.extensions/`
 
 You must **include** the trailing slash in `express-ts/` so `kubectl` will perform a recursive directory copy.
 
-3. Restart the pod from the above command.
+3. Restart the pod from the above command
 
 `kubectl delete po -n <namespace> microclimate-ibm-microclimate-<suffix>`
 
-4. Once the pod restarts, this template should appear in the Microclimate *Templates* view.
+4. Once the pod restarts, this template can be found in the Microclimate *Templates* view.
 
 ## Iterative Development Support
 ### With Docker
 To use with Docker, import this project as a Microclimate template. Microclimate's iterative dev support for Docker projects will take care of the rest.
+
+Without Microclimate, you can also change the Dockerfile `CMD` to call `dev.sh`, which will do the steps below.
 
 ### Without Docker
 Run:
