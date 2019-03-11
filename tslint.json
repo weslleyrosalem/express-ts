@@ -9,7 +9,13 @@
 		"ordered-imports": false,
 		"typedef-whitespace": false,
 		"variable-name": [ true, "allow-leading-underscore", "allow-trailing-underscore" ],
-		"only-arrow-functions": false
+		"only-arrow-functions": false,
+		"no-console": [ false ],
+		"arrow-parens": [ false ],
+		"object-literal-sort-keys": [ false ],
+
+		// My rules
+		"max-line-length": [ true, 150 ],
 	},
-	"defaultSeverity": "warning"
+	"defaultSeverity": "warning",
 }
