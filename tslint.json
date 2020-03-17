@@ -15,7 +15,7 @@
 		"object-literal-sort-keys": [ false ],
 
 		// My rules
-		"max-line-length": [ true, 150 ],
+		"max-line-length": [ true, 150 ]
 	},
-	"defaultSeverity": "warning",
+	"defaultSeverity": "warning"
 }

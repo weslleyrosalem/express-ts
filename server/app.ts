@@ -1,5 +1,3 @@
-require("appmetrics-dash").attach();      // tslint:disable-line:no-var-requires
-
 import express from "express";
 import logger from "morgan";
 import cookieParser from "cookie-parser";
@@ -22,12 +20,12 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/", indexRouter);
 
 // catch 404
-app.use((req, res, next) => {
-  return res.render("404", { path: req.path });
+app.use((req, res, _next) => {
+  return res.status(404).render("404", { path: req.path });
 });
 
 // error handler
-app.use((err: any, req: express.Request, res: express.Response, next: express.NextFunction) => {
+app.use((err: any, req: express.Request, res: express.Response, _next: express.NextFunction) => {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get("env") === "dev" ? err : {};
