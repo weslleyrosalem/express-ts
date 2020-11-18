@@ -1,9 +1,0 @@
-{
-    "search.exclude": {
-        "node_modules/": true,
-        "dist/": true
-    },
-    "files.associations": {
-        "Dockerfile_prod": "dockerfile"
-    },
-}

@@ -1,10 +1,12 @@
 import express from "express";
+import os from "os";
 
 const router = express.Router();
 
 /* GET home page. */
 router.get("/", (req, res, next) => {
-  return res.render("index", { title: "Express" });
+  const host = os.hostname() || "Unknown";
+  return res.render("index", { title: "Express TS", host });
 });
 
 router.get("/health", (req, res, next) => {
