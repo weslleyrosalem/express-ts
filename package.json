@@ -14,7 +14,7 @@
     "build": "npm run ts-compile && npm run copy-static",
     "clean": "rm -rf node_modules/ dist/",
     "docker-build": "npm run build && docker build -t express-ts .",
-    "docker-run": "npm run docker-build && docker run -it -p 3000:3000 express-ts",
+    "docker-run": "docker run -p 3000:3000 express-ts",
     "lint": "tslint -p ."
   },
   "dependencies": {
