@@ -76,14 +76,14 @@ jobs:
     - name: Determine tag
       if: env.TAG == ''
       run: |
-        echo "TAG=${GITHUB_SHA::7}" | tee -a $GITHUB_ENV
+        echo "TAG=latest ${GITHUB_SHA::7}" | tee -a $GITHUB_ENV
 
     # https://github.com/redhat-actions/buildah-build#readme
     - name: Build from Dockerfile
-      uses: redhat-actions/buildah-build@v1
+      uses: redhat-actions/buildah-build@v2
       with:
         image: ${{ env.APP_NAME }}
-        tag: ${{ env.TAG }}
+        tags: ${{ env.TAG }}
         # If you don't have a dockerfile, see:
         # https://github.com/redhat-actions/buildah-build#building-from-scratch
         # Otherwise, point this to your Dockerfile relative to the repository root.
@@ -93,10 +93,10 @@ jobs:
     # https://github.com/redhat-actions/push-to-registry#readme
     - name: Push to registry
       id: push-to-registry
-      uses: redhat-actions/push-to-registry@v1
+      uses: redhat-actions/push-to-registry@v2
       with:
         image: ${{ env.APP_NAME }}
-        tag: ${{ env.TAG }}
+        tags: ${{ env.TAG }}
         registry: ${{ env.REGISTRY }}
         username: ${{ env.REGISTRY_USER }}
         password: ${{ env.REGISTRY_PASSWORD }}
@@ -109,7 +109,7 @@ jobs:
 
     # https://github.com/redhat-actions/oc-login#readme
     - name: Log in to OpenShift
-      uses: redhat-actions/oc-login@v1.1
+      uses: redhat-actions/oc-login@v1
       with:
         openshift_server_url: ${{ env.OPENSHIFT_SERVER }}
         openshift_token: ${{ env.OPENSHIFT_TOKEN }}
