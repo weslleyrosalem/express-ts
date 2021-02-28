@@ -2,7 +2,7 @@ name: Take down self-hosted runner
 on:
   workflow_dispatch:
   repository_dispatch:
-    types: [ runner_takedown ]
+    types: [ takedown_runner ]
 
 env:
   HELM_RELEASE_NAME: express-ts-runner
