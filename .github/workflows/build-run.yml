@@ -2,6 +2,7 @@ name: Build and run
 on:
   workflow_dispatch:
   repository_dispatch:
+    types: [ runner_ready ]
 
 jobs:
   ci:
@@ -37,3 +38,10 @@ jobs:
       - name: Echo output
         run: |
           cat output.txt
+
+      - name: Dispatch takedown runner
+        uses: peter-evans/repository-dispatch@v1.1.3
+        if: always()
+        with:
+          token: ${{ secrets.PAT }}
+          event-type: takedown_runner
