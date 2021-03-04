@@ -4,12 +4,12 @@ import os from "os";
 const router = express.Router();
 
 /* GET home page. */
-router.get("/", (req, res, next) => {
+router.get("/", (_req, res, _next) => {
   const host = os.hostname() || "Unknown";
   return res.render("index", { title: "Express TS", host });
 });
 
-router.get("/health", (req, res, next) => {
+router.get("/health", (_req, res, _next) => {
   return res.json({ status: "UP" });
 });
 
