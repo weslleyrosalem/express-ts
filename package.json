@@ -14,7 +14,7 @@
     "clean": "rm -rf node_modules/ out/ dist/",
     "docker-build": "npm run build && docker build -t express-ts .",
     "docker-run": "docker run -p 3000:3000 express-ts",
-    "lint": "tslint -p ."
+    "lint": "eslint ."
   },
   "dependencies": {
     "cookie-parser": "^1.4.5",
