@@ -25,6 +25,7 @@ app.use((req, res, _next) => {
 });
 
 // error handler
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 app.use((err: any, req: express.Request, res: express.Response, _next: express.NextFunction) => {
   // set locals, only providing error in development
   res.locals.message = err.message;

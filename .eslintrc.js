@@ -3,6 +3,11 @@ module.exports = {
         "eslint:recommended",
         "plugin:@typescript-eslint/recommended",
     ],
+    ignorePatterns: [
+        ".eslintrc.js",
+        "copy-assets.js",
+        "dist/**"
+    ],
     parser: "@typescript-eslint/parser",
     parserOptions: {
         ecmaVersion: 12,
@@ -11,7 +16,13 @@ module.exports = {
             "./tsconfig.json",
         ],
     },
+    env: {
+        node: true,
+    },
     plugins: [
         "@typescript-eslint",
     ],
+    rules: {
+        "@typescript-eslint/no-unused-vars": [ 2, { argsIgnorePattern: "(^_|req|res|next)" } ]
+    }
 }
