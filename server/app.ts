@@ -5,6 +5,8 @@ import path from "path";
 
 import indexRouter from "./routes/index";
 
+// blah blah blah
+
 const app = express();
 
 // view engine setup
