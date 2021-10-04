@@ -48,16 +48,13 @@ env:
 
   # 🖊️ EDIT to specify custom tags for the container image, or default tags will be generated below.
   IMAGE_TAGS: ""
-  REGISTRY: quay.io/tetchell
-  REGISTRY_USER: tetchell
-  REGISTRY_PASSWORD: ${{ secrets.REGISTRY_PASSWORD }}
 
 on:
   # https://docs.github.com/en/actions/reference/events-that-trigger-workflows
   push:
     # Edit to the branch(es) you want to build and deploy on each push.
     branches:
-      - main
+      - crda-test
 
 jobs:
   openshift-ci-cd:
